@@ -27,7 +27,7 @@ function HandleChallenge(){
 function HandleDeleteChallenge(id:number){
   setChallenge(prevChallenge =>
     prevChallenge.filter((challengeItem)=>{
-      challengeItem.id !== id
+      return challengeItem.id !== id
     })
   )
 }
