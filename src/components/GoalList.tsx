@@ -1,11 +1,8 @@
-import Goals from './Goals.tsx'
+import Goals from './Goals.tsx';
+import {type Challenges} from '../Apps.tsx';
 
 interface GoalListProps {
-    challengeList : {
-        title: string;
-        description: string;
-        id: number
-    }[]
+    challengeList : Challenges[]
 }
 
 export default function GoalList({challengeList}:GoalListProps) {
