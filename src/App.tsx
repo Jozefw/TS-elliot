@@ -24,13 +24,21 @@ function HandleChallenge(){
   })
 }
 
+function HandleDeleteChallenge(id:number){
+  setChallenge(prevChallenge =>
+    prevChallenge.filter((challengeItem)=>{
+      challengeItem.id !== id
+    })
+  )
+}
+
   return (
     <main>
       <Header image={{src:goalsImage,alt:"An image of challenges"}}>
         <h1>Your Challenges Schedule</h1>
       </Header>
         <button onClick={HandleChallenge}>Add Daily Challenge</button>
-      <GoalList challengeList={challenge}></GoalList>
+      <GoalList onDeleteChallenge={HandleDeleteChallenge} challengeList={challenge}></GoalList>
     </main>
   );
 }
